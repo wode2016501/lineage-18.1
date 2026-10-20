@@ -1,5 +1,5 @@
-
-
+获得版本a.xml
+https://github.com/LineageOS/android/raw/refs/heads/lineage-18.0/default.xml
 
 clang-21+
 ```bash
