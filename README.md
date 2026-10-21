@@ -23,3 +23,7 @@ cp xbin/* /system/xbin/ -a
 
 -resource-dir=/data/.wode/data/com.termux/files/usr/lib/clang/
 
+
+
+sed -i 's/^using ::\([a-zA-Z0-9_]*\);$/using ::\1 __attribute__((using_if_exists));/' \
+    external/libcxx/include/cmath
