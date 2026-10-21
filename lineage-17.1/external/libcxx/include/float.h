@@ -10,6 +10,15 @@
 
 #ifndef _LIBCPP_FLOAT_H
 #define _LIBCPP_FLOAT_H
+#ifndef FLT_MAX
+#define FLT_MAX __FLT_MAX__
+#endif
+#ifndef FLT_MIN
+#define FLT_MIN __FLT_MIN__
+#endif
+#ifndef DBL_MAX
+#define DBL_MAX __DBL_MAX__
+#endif
 
 /*
     float.h synopsis

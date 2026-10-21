@@ -319,7 +319,7 @@ using ::signbit __attribute__((using_if_exists));
 using ::fpclassify __attribute__((using_if_exists));
 using ::isfinite __attribute__((using_if_exists));
 using ::isinf __attribute__((using_if_exists));
-using ::isnan __attribute__((using_if_exists));
+using ::isnan __attribute__((__using_if_exists__));
 using ::isnormal __attribute__((using_if_exists));
 using ::isgreater __attribute__((using_if_exists));
 using ::isgreaterequal __attribute__((using_if_exists));
