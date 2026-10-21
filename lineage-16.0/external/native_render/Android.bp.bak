@@ -1,0 +1,21 @@
+cc_binary {
+    name: "native_render_test",
+    srcs: ["main.cpp"],
+    
+    shared_libs: [
+        "libui",
+        "libgui",
+        "libutils",
+        "libcutils",
+        "libbinder",
+        "libandroid", // 额外增加此项动态链接库支持
+    ],
+
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-Wunused",
+        "-Wunreachable-code",
+    ],
+}
+

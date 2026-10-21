@@ -1,0 +1,26 @@
+cc_binary {
+    name: "native_render_test",
+    srcs: ["main.cpp"],
+    include_dirs: ["frameworks/av/camera/ndk/include",
+    ], 
+    // 1. 修复缺失依赖的关键：将 NDK 动态外壳库改为直接链接系统底层真实的 C++ 实现服务
+    shared_libs: [
+        "libui",
+        "libgui",
+        "libutils",
+        "libcutils",
+        "libbinder",
+        "libandroid",
+        "libmediandk",       // 媒体硬编 NDK 服务
+        "libcamera_client",  // 替换 libcamera2ndk，直接读取 Android 系统的相机服务核心底层
+	"libcamera2ndk.vendor", 
+    ],
+
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-Wunused",
+        "-Wunreachable-code",
+    ],
+}
+
