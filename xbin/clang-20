@@ -1,0 +1,2 @@
+#! /system/bin/sh
+mount /data/data/com.termux/files/usr/bin/clang-20 /system/xbin/clang-20

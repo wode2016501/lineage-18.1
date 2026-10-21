@@ -1,0 +1,33 @@
+#!/system/bin/sh
+
+# 1. 强行放在最开头的系统库路径（确保绝对的最高优先级）
+FRONT_ARGS="-L/system/lib64"
+
+# 2. 用来存放安全传递的中间参数
+MID_ARGS=""
+
+# 3. 强行收纳并降级到最后面的 Termux 路径
+END_ARGS="-L/data/.wode/data/com.termux/files/usr/lib"
+
+# 4. 遍历 Clang 传过来的所有参数进行智能精准清洗
+for arg in "$@"; do
+    # 模糊匹配：只要参数里包含 com.termux/files/usr 且是以 -L 开头的路径，一律拦截跳过
+    case "$arg" in
+        -L*com.termux/files/usr*)
+            continue
+            ;;
+    esac
+
+    # 强行剔除 Termux 私有的 c++_shared，并在此处【追加】系统标准库参数，而不是覆盖清空！
+    if [ "$arg" = "-lc++_shared" ]; then
+        MID_ARGS="$MID_ARGS -L/system/lib64 -lc++ -lstdc++"
+        continue
+    fi
+    
+    # 其余安全参数（如 .o 文件、sysroot 等）使用字符串追加，绝不使用 = 覆盖
+    MID_ARGS="$MID_ARGS \"$arg\""
+done
+
+# 5. 最终大合流：[系统核心路径] -> [安全的原始参数 + 系统C++] -> [被彻底降级的Termux所有路径]
+eval exec "/data/.wode/data/com.termux/files/usr/bin/ld.lld" $FRONT_ARGS $MID_ARGS $END_ARGS
+

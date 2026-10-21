@@ -20,3 +20,4 @@ system/media
 bionic
 external/libcxx
 external/libcxxabi
+external/vulkan-headers
