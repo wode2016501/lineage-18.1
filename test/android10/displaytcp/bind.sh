@@ -1,0 +1,2 @@
+android-gcc -I/media/wode/ec61acb7-033a-45dd-93e8-6a5ee077741d/test/lineage-17.1/system/core/libprocessgroup/include -I/media/wode/ec61acb7-033a-45dd-93e8-6a5ee077741d/test/lineage-17.1/frameworks/av/media/libaudioclient -I/media/wode/ec61acb7-033a-45dd-93e8-6a5ee077741d/test/lineage-17.1/frameworks/av/media/libaudioclient/include   *.cpp -lmediandk -lc++ -lutils -lgui  -lui -lnativewindow -laudioclient
+
