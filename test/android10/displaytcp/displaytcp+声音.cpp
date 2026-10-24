@@ -13,6 +13,7 @@
 #include <stdlib.h>
 #include <cstring>
 
+
 #define TAG "scrcpy_c_networking"
 
 #include <android/native_window.h>
