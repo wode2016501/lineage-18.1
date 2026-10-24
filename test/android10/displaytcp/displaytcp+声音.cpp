@@ -348,7 +348,7 @@ int main(int argc, char **argv)
     int client_max = 10;
     int client_count = 0;
     int bitrate = 8000000; // 8M
-    int abitrate = 48100; //48k
+    int abitrate = 48000; //48k
     int port = 9999;
     int aport = 9998;
     int *Width = (int *)buffer;
