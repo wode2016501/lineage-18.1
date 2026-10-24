@@ -1,0 +1,3 @@
+cd /media/wode/ec61acb7-033a-45dd-93e8-6a5ee077741d/lineage-16 && sh gcc.sh  -I'/home/wode/src/ncnn-20250916-androidc++/arm64/install/include'  -I'/home/wode/src/ncnn-20250916/arm64/install/include/ncnn' /home/wode/src/ncnn-20250916/arm64/install/lib/*.a  -c  '/home/wode/tmp/android/my_scrcpy_project/纯C需要lineage源码/cam录像/android9/ncnn/ncnn+cam.cpp'
+adb -s 192.168.100.5 push '/home/wode/tmp/android/my_scrcpy_project/纯C需要lineage源码/cam录像/android10/ncnn/yolov5nu.ncnn.param' '/home/wode/tmp/android/my_scrcpy_project/纯C需要lineage源码/cam录像/android10/ncnn/yolov5nu.ncnn.bin'  ncnn+cam.o /data/local/tmp/cam
+

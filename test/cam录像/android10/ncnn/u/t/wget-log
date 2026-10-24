@@ -1,0 +1,6 @@
+--2026-10-21 19:00:26--  https://release-assets.githubusercontent.com/github-production-release-asset/521807533/37521f49-dcaf-42a2-a5c9-d963dc453686?sp=r
+正在解析主机 release-assets.githubusercontent.com... 185.199.111.133
+正在连接 release-assets.githubusercontent.com|185.199.111.133|:443... 已连接。
+已发出 HTTP 请求，正在等待回应... 618 jwt:jwt-not-provided
+2026-10-21 19:00:27 错误 618：jwt:jwt-not-provided。
+

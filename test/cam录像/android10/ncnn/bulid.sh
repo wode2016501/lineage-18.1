@@ -1,0 +1,1 @@
+android-c++ -I'/home/wode/src/ncnn-20250916-androidc++/arm64/install/include'  -I'/home/wode/src/ncnn-20250916/arm64/install/include/ncnn' /home/wode/src/ncnn-20250916/arm64/install/lib/*.a  ncnn+cam.cpp -lui -lgui -laaudio -landroid -lstdc++ -lmediandk -lcamera2ndk -llog -lbinder -lutils -lgui -lcutils -lui -lnativewindow -lcutils   -laudioclient
