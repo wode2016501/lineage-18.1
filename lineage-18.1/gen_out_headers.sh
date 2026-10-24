@@ -5,7 +5,7 @@ echo "=== 开始利用高版本 SDK 30.0.3 aidl 转换原生跨进程接口 ==="
 AIDL_CMD="/opt/android-sdk/build-tools/30.0.3/aidl"
 OUT_DIR="out_headers_dir/ndk"
 mkdir -p "$OUT_DIR"
-aidlinc="$(find hardware frameworks -type d -name  aidl |awk '{printf " -I"$1}')"
+aidlinc="$(find *  -name "*.aidl" |sed 's#android/.*##g'|grep '/$'|sort -u|sed 's#/$##g'|sed 's#^#-I #g'|tr '\n' ' ')"
 echo >k.sh
 find . -name "*.aidl"|strings | while read -r aidl_file; do
     echo $AIDL_CMD --lang=ndk \
