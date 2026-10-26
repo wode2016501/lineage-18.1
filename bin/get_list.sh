@@ -1,4 +1,4 @@
-test -f default.xml||exec echo "去https://github.com/LineageOS/android 下载对应 default.xml“
+test -f default.xml||exec echo '去https://github.com/LineageOS/android 下载对应 default.xml'
 echo 'default=" --depth 1 -b lineage-17.1 https://github.com"' >k.sh
 echo 'aosp="--depth 1 -b android-10.0.0_r41 https://android.googlesource.com"' >>k.sh
 echo 'pdk=' >>k.sh
