@@ -24,6 +24,43 @@
 #include <stdint.h>
 #include <memory>
 #include <string>
+namespace android {
+namespace bluetooth {
+
+#ifndef MOCK_BLUETOOTH_METRICS_ENUMS_DEFINED
+#define MOCK_BLUETOOTH_METRICS_ENUMS_DEFINED
+
+enum DirectionEnum {
+    DIRECTION_UNKNOWN = 0,
+    DIRECTION_OUTGOING = 1,
+    DIRECTION_INCOMING = 2
+};
+
+enum SocketConnectionstateEnum {
+    SOCKET_CONNECTION_STATE_UNKNOWN = 0,
+    SOCKET_CONNECTION_STATE_LISTENING = 1,
+    SOCKET_CONNECTION_STATE_CONNECTING = 2,
+    SOCKET_CONNECTION_STATE_CONNECTED = 3,
+    SOCKET_CONNECTION_STATE_DISCONNECTING = 4,
+    SOCKET_CONNECTION_STATE_DISCONNECTED = 5
+};
+
+enum SocketRoleEnum {
+    SOCKET_ROLE_UNKNOWN = 0,
+    SOCKET_ROLE_LISTEN = 1,
+    SOCKET_ROLE_CONNECTION = 2
+};
+
+enum DeviceInfoSrcEnum {
+    DEVICE_INFO_SRC_UNKNOWN = 0,
+    DEVICE_INFO_INTERNAL = 1,
+    DEVICE_INFO_EXTERNAL = 2
+};
+
+#endif
+
+} // namespace bluetooth
+} // namespace android
 
 namespace bluetooth {
 

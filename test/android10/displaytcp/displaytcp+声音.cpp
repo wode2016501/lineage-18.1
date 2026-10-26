@@ -13,7 +13,6 @@
 #include <stdlib.h>
 #include <cstring>
 
-
 #define TAG "scrcpy_c_networking"
 
 #include <android/native_window.h>
@@ -144,7 +143,7 @@ void audio_callback(int event, void *user, void *info)
                             perror("错误 realloc()");
                         }
                     }
-                    printf("声音客户端连接成功 fd=%d count=%d\n", aclient_arr[aclient_count], aclient_count);
+                    printf("声音客户端连接成功 fd=%d count=%d\n", aclient_arr[aclient_count-1], aclient_count);
                 }
             }
             for (int i = 0; i < aclient_count; i++)
@@ -160,10 +159,12 @@ void audio_callback(int event, void *user, void *info)
                         if (ret == dataSizeInBytes)
                             continue;
                     }
-                    // perror("错误 send()");
+                    
+                     fprintf(stderr, "TCP %d 声音客户端似乎断开了连接，发送失败还有%d。\n", aclient_arr[i], aclient_count-1 );
                     close(aclient_arr[i]);
-                    aclient_arr[i] = -1;
+                    memcpy(aclient_arr + i, aclient_arr + i + 1, sizeof(int) * (aclient_count - i - 1));
                     aclient_count--;
+                    i--;
                 }
             }
         }
