@@ -526,6 +526,8 @@ int main(int argc, char **argv)
     AMediaFormat_setInt32(format, AMEDIAFORMAT_KEY_COLOR_FORMAT, 2130708361); // COLOR_FormatSurface
     AMediaFormat_setInt32(format, "profile", 8);                              // H.264 Baseline Profile
     AMediaFormat_setInt32(format, "level", 65536);                            // H.264 Level 3.1
+    AMediaFormat_setInt32(format, "vendor.qti-ext-dec-picture-order.enable", 1);
+    AMediaFormat_setInt32(format, "low-latency", 1);
     media_status_t status = AMediaCodec_configure(codec, format, nullptr, nullptr, AMEDIACODEC_CONFIGURE_FLAG_ENCODE);
     if (status != AMEDIA_OK)
     {
